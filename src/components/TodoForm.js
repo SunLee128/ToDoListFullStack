@@ -4,7 +4,6 @@ class TodoForm extends Component {
   constructor(props){
     super(props)
     this.state = {inputValue: ''}
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange = (event) => {
@@ -13,7 +12,7 @@ class TodoForm extends Component {
     })
   }
 
-  handleSubmit(){
+  handleSubmit = () => {
     this.props.addTodo(this.state.inputValue)
   }
 
