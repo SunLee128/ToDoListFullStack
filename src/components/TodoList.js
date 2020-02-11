@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TodoItem from './TodoItem'
 
 const APIURL = '/api/todos';
 
@@ -33,9 +34,18 @@ class ToDoList extends Component {
   }
 
   render () {
+    const todos = this.state.todos.map((t) =>(
+      <TodoItem
+        key={t._id}
+        {...t}
+      />
+    ))
     return (
       <div>
-        TodoList
+        <h1>To Do List</h1>
+        <ul>
+          {todos}
+        </ul>
       </div>
     );
   }
